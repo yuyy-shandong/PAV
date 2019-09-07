@@ -27,7 +27,13 @@ library(PAV)
 
 
 ```
-
+u <- rnorm(1000,0,1)
+x1 <- 0.5*u +rnorm(1000,0,1)
+x3 <- 0.5*u +rnorm(1000,0,1)
+y <- 2*x1 + 1*u +rnorm(1000,0,1)
+data <- data.frame (u,x1,x3,y)
+model <- PAV (y~x1+x3, data = data, sdmethod ="normal",x1.name = "x1",x2.name = "x3",boots.no = NULL)
+model
 ```
 
 
